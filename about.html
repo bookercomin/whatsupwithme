@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Booker Comin</title>
+    <!-- We are not using the professional style.css here as this is the 'from-scratch' page -->
+    <style>
+        /* ── RESET & BASE ── */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --primary: #2d3436;
+            --accent: #0984e3;
+            --bg: #ffffff;
+            --secondary-bg: #f9f9f9;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border: #dfe6e9;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* ── POSITIONING DIVS (Requirement: 3+ Divs) ── */
+        .page-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            padding: 100px 40px;
+            background: var(--secondary-bg);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .main-content {
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .content-block {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        /* ── NAVIGATION ── */
+        nav {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        /* ── TYPOGRAPHY ── */
+        h1 { font-size: 3rem; margin-bottom: 20px; color: var(--primary); }
+        h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--accent); }
+        p { margin-bottom: 20px; color: var(--text-light); }
+
+        /* ── COMPONENTS ── */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .list-container {
+            background: var(--secondary-bg);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+
+        .anchor-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* ── TABLEAU CONTAINER ── */
+        #tableau-viz-container {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body id="top">
+
+    <nav>
+        <a href="index.html">Main Site</a>
+        <a href="#data-viz">Jump to Analytics (Anchor)</a>
+    </nav>
+
+    <div class="page-container">
+        
+        <!-- Header Section -->
+        <header class="hero-section">
+            <h1>The From-Scratch View</h1>
+            <p>This page demonstrates core HTML/CSS abilities without external frameworks.</p>
+            <!-- Custom Image Requirement (Not from theme) -->
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Tech Background" style="max-width: 100%; border-radius: 8px; margin-top: 20px;">
+        </header>
+
+        <div class="main-content">
+            
+            <!-- Section: Nested Lists (Requirement 1) -->
+            <div class="content-block">
+                <h2>Interests & Exploration</h2>
+                <div class="list-container">
+                    <p>Current priorities for personal growth:</p>
+                    <ol>
+                        <li>Professional Development
+                            <ul>
+                                <li>Mastering AI System Architecture</li>
+                                <li>Advanced Marketing Analytics</li>
+                            </ul>
+                        </li>
+                        <li>Travel Goals
+                            <ul>
+                                <li>Rome and Florence</li>
+                                <li>The Swiss Alps</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Section: Video (Requirement 2) -->
+            <div class="content-block">
+                <h2>Visual Inspiration</h2>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1VZZI485y3w?si=AFHF_yQ8sGRDQ_Qz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Section: Tableau (Requirement 3 & 4) -->
+            <div id="data-viz" class="content-block">
+                <h2>Market Visualization</h2>
+                <a href="#top" class="anchor-link">↑ Back to Top</a>
+                <p>Interactive data dashboard powered by Tableau:</p>
+                
+                <div id="tableau-viz-container">
+                    <div class='tableauPlaceholder' id='viz1776380077122' style='position: relative'>
+                        <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;QN&#47;QNZ84Z2N2&#47;1_rss.png' style='border: none' /></a></noscript>
+                        <object class='tableauViz'  style='display:none;'>
+                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                            <param name='embed_code_version' value='3' /> 
+                            <param name='path' value='shared&#47;QNZ84Z2N2' /> 
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;QN&#47;QNZ84Z2N2&#47;1.png' /> 
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='en-US' />
+                        </object>
+                    </div>                
+                    <script type='text/javascript'>                    
+                        var divElement = document.getElementById('viz1776380077122');                    
+                        var vizElement = divElement.getElementsByTagName('object')[0];                    
+                        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='600px';} 
+                        else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height='600px';} 
+                        else { vizElement.style.width='100%';vizElement.style.height='977px';}                     
+                        var scriptElement = document.createElement('script');                    
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                    </script>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2025 From-Scratch Design Lab</p>
+        </footer>
+    </div>
+</body>
+</html>
